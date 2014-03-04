@@ -1,0 +1,24 @@
+{
+    "name": "by-cedric/delegator",
+    "type": "library",
+    "description": "A nice API, for Laravel, helper to keep your responses RESTed.",
+    "keywords": ["api", "rest", "delegator", "bycedric", "laravel"],
+    "homepage": "http://github.com/bycedric/delegator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric van Putten",
+            "email": "me@bycedric.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ByCedric\\Delegator\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
