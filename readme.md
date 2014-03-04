@@ -9,7 +9,7 @@ You can install this package through Composer.
 
 ```js
 "require-dev": {
-    "by-cedric/Delegator": "dev-master"
+    "by-cedric/delegator": "dev-master"
 }
 ```
 
