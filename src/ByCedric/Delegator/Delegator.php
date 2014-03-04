@@ -99,6 +99,11 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			'code' 		=> $this->code,
 			'message' 	=> $this->message,
 		);
+		
+		if( empty($data) )
+		{
+			return $meta;
+		}
 
 		if( array_keys($data) !== range(0, count($data) - 1) )
 		{
