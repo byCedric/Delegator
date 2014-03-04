@@ -1,6 +1,5 @@
 <?php namespace ByCedric\Delegator;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Contracts\ArrayableInterface;
 
 class Delegator extends \Illuminate\Http\JsonResponse
