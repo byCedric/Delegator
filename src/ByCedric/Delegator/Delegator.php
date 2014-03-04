@@ -76,6 +76,13 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	 */
 	protected $mock_code = false; 
 
+	/**
+	 * The cached data to use when something is manipulated.
+	 * 
+	 * @var array
+	 */
+	protected $cache_data = null;
+
 	public function __construct( $data = null, $status = 200, $headers = array(), $options = 0 )
 	{
 		parent::__construct($data, $status, $headers, $options);
@@ -96,7 +103,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	 * @param  array $data
 	 * @return \ByCedric\Delegator\Delegator
 	 */
-	protected function meta( $data = array() )
+	private function _meta( $data = array() )
 	{
 		$meta = array(
 			'success'	=> !$this->error,
@@ -130,6 +137,19 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	}
 
 	/**
+	 * Updated the content of the response, when manipulated.
+	 * 
+	 * @return \ByCedric\Delegator\Delegator
+	 */
+	private function _update()
+	{
+		$data = $this->_meta($this->cache_data);
+		$this->setData($data);
+
+		return $this;
+	}
+
+	/**
 	 * Set the status code for the current response.
 	 * 
 	 * @param  integer $code
@@ -148,7 +168,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$this->setStatusCode($code);
 		}
 
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -160,7 +180,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	public function message( $message = '' )
 	{
 		$this->message = $message;
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -177,9 +197,8 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$data = $data->toArray();
 		}
 
-		$data = $this->meta($data);
-		$this->setData($data);
-		return $this;
+		$this->cache_data = $data;
+		return $this->_update();
 	}
 
 	/**
@@ -191,7 +210,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	public function callback( $callback = null )
 	{
 		$this->setCallback($callback);
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -206,7 +225,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	{
 		$this->limit = (int) $limit;
 
-		if( is_bool($limit) && $limit == false )
+		if( $limit === false )
 		{
 			$this->use_limit = false;
 		}
@@ -215,7 +234,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$this->use_limit = true;
 		}
 
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -230,7 +249,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	{
 		$this->offset = (int) $offset;
 
-		if( is_bool($offset) && $offset == false )
+		if( $offset === false )
 		{
 			$this->use_offset = false;
 		}
@@ -239,7 +258,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$this->use_offset = true;
 		}
 
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -254,7 +273,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	{
 		$this->count = (int) $count;
 
-		if( is_bool($count) && $count == false )
+		if( $count === false )
 		{
 			$this->use_count = false;
 		}
@@ -263,7 +282,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$this->use_count = true;
 		}
 
-		return $this;
+		return $this->_update();
 	}
 
 	/**
@@ -307,7 +326,7 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			$this->setStatusCode($this->code);
 		}
 
-		return $this;
+		return $this->_update();
 	}
 
 }
