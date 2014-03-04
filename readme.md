@@ -1,6 +1,6 @@
 # Delegator
 
-A nice API, for Laravel, helper to keep your responses RESTed.
+A nice API helper, for Laravel, to keep your responses RESTed.
 It blends in with the usual Response of Laravel.
 
 ## Installation
