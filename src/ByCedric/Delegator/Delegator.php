@@ -79,7 +79,11 @@ class Delegator extends \Illuminate\Http\JsonResponse
 	public function __construct( $data = null, $status = 200, $headers = array(), $options = 0 )
 	{
 		parent::__construct($data, $status, $headers, $options);
-		$this->data($data);
+		
+		if( $data != null )
+		{
+			$this->data($data);
+		}
 	}
 
 	/**
