@@ -45,7 +45,7 @@ You can use Delegator as simple as:
 Response::api();
 ```
 
-This initiates a new Delegator, that is actually is a Response object.
+This initiates a new Delegator, that is actually a Response object.
 So when you are done setting your response, you can just return it as a normal response:
 
 ```php
