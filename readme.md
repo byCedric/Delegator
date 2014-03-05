@@ -32,7 +32,7 @@ And replace it with:
 ```php
 'aliases' => array(
     ...
-    'Response'        => 'ByCedric\Delegator\Delegator',
+    'Response'        => 'ByCedric\Delegator\Facades\Response',
     ...
 )
 ```
