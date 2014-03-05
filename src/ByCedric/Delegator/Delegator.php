@@ -109,8 +109,13 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			'code' 		=> $this->code,
 			'message' 	=> $this->message,
 		);
+		
+		if( $data == null || !is_array($data) )
+		{
+			return $meta;
+		}
 
-		if( empty($data) || array_keys($data) !== range(0, count($data) - 1) )
+		if( array_keys($data) !== range(0, count($data) - 1) )
 		{
 			$meta['result'] = $data;
 			return $meta;
