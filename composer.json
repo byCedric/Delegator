@@ -2,7 +2,7 @@
     "name": "by-cedric/delegator",
     "type": "library",
     "description": "A nice API helper, for Laravel, to keep your responses RESTed.",
-    "keywords": ["api", "rest", "delegator", "laravel"],
+    "keywords": ["api", "rest", "delegator", "laravel", "bycedric"],
     "homepage": "http://github.com/bycedric/delegator",
     "license": "MIT",
     "authors": [
