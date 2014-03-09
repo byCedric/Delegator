@@ -1,5 +1,5 @@
 {
-    "name": "by-cedric/delegator",
+    "name": "bycedric/delegator",
     "type": "library",
     "description": "A nice API helper, for Laravel, to keep your responses RESTed.",
     "keywords": ["api", "rest", "delegator", "laravel", "bycedric"],
