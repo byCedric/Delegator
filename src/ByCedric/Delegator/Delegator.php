@@ -307,6 +307,23 @@ class Delegator extends \Illuminate\Http\JsonResponse
 			->message($message)
 		;
 	}
+	
+	/**
+	 * Set the response as succeded.
+	 * please enter a human readable message.
+	 * This way the API user can understand the state of the API.
+	 * 
+	 * @param  string  $message
+	 * @param  integer $code
+	 * @return \ByCedric\Delegator\Delegator
+	 */
+	public function success( $message, $code )
+	{
+		return $this
+			->code($code)
+			->message($message)
+		;
+	}
 
 	/**
 	 * Fake the status code of the response.
