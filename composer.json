@@ -1,25 +1,40 @@
 {
     "name": "bycedric/delegator",
     "type": "library",
-    "description": "A nice API helper, for Laravel, to keep your responses RESTed.",
-    "keywords": ["api", "rest", "delegator", "laravel"],
+    "description": "A nice API response helper, to build the output you want.",
+    "keywords": [
+        "delegator",
+        "jsonapi"
+    ],
     "homepage": "http://github.com/bycedric/delegator",
     "license": "MIT",
     "authors": [
         {
             "name": "Cedric van Putten",
-            "email": "me@bycedric.com"
+            "email": "me@bycedric.com",
+            "homepage": "http://bycedric.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.7",
-        "illuminate/support": "4.1.*",
-        "illuminate/http": "4.1.*"
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "satooshi/php-coveralls": "^0.6.1"
     },
     "autoload": {
-        "psr-0": {
-            "ByCedric\\Delegator\\": "src/"
+        "psr-4": {
+            "ByCedric\\Delegator\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ByCedric\\Delegator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     },
     "minimum-stability": "stable"
 }

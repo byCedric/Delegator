@@ -1,0 +1,11 @@
+# General
+/vendor
+composer.lock
+.DS_Store
+
+# Editor
+.idea
+
+# PHPUnit
+/build
+phpunit.xml
