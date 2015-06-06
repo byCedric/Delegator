@@ -13,11 +13,11 @@ matrix:
 
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
 
 script:
   - mkdir -p ./build/logs
-  - php ./vendor/bin/phpunit -c phpunit.example.xml --coverage-clover ./build/logs/clover.xml
+  - php ./vendor/bin/phpunit -c phpunit.xml.dist --coverage-text
 
 after_script:
   - php ./vendor/bin/coveralls
