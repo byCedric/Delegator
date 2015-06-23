@@ -1,6 +1,7 @@
 # Delegator
 
 A nice API response helper, to build the output you want.
+Heavily inspired by [Tobscure's JSON-API](github.com/tobscure/json-api).
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bycedric/delegator.svg?style=flat-square)](https://packagist.org/packages/bycedric/delegator)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
