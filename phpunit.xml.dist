@@ -12,7 +12,7 @@
 
     <testsuites>
         <testsuite name="delegator">
-            <directory suffix="Test.php">./tests/</directory>
+            <directory suffix="TestCase.php">./tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
