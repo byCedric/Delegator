@@ -3,13 +3,15 @@
 A nice API helper, for Laravel, to keep your responses RESTed.
 It blends in with the usual Response of Laravel.
 
+> Note, this version is deprecated.
+
 ## Installation
 
 You can install this package through Composer.
 
 ```js
-"require-dev": {
-    "by-cedric/delegator": "dev-master"
+"require": {
+    "bycedric/delegator": "dev-deprecated"
 }
 ```
 
@@ -52,7 +54,7 @@ So when you are done setting your response, you can just return it as a normal r
 public function show( $id )
 {
     $task = Task::find($id);
-      
+
     return Response::api($task);
 }
 ```
@@ -77,7 +79,7 @@ It accepts an integer.
 ```php
 Response::api()->code(403);
 ```
-  
+
 ### message
 
 An API response is often read by developers, when developing their application.
